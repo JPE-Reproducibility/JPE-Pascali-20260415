@@ -1,6 +1,13 @@
-title: "Stand-in title"
-author: "Dr Prof James 'JayJay' Author"
-paper_id: 12345678
+title: "The Origin of the State: Land Productivity or Appropriability? Rejoinder"
+author: "Pascali"
 round: 1
-repo: "https://www.github.com/standin"
-dropbox_rel_path: "JPE/Author-12345678/1"
+repo: "https://github.com/JPE-Reproducibility/JPE-Pascali-20260415"
+paper_id: 20260415
+journal: "JPE"
+paper_slug: "Pascali-20260415"
+dropbox_rel_path: "JPE/Pascali-20260415/1"
+package_size_gb: 0.0
+package_max_file_size_gb: 2
+package_max_pkg_size_gb: 10
+large_reports_url: "https://www.dropbox.com/scl/fo/vw0vk00pq3xa16jjrqj8x/ALQ_jdTcQKZ6M8MH-xJ-oBc?rlkey=9h8n22h4lv7x7ql99618a9yxt&dl=0"
+paper_source_subfolder: "paper-author"

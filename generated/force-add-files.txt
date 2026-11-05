@@ -1,0 +1,4 @@
+replication-package/REJOINDER REPLICATION MATERIAL/PACKAGES/x_gmm.ado
+replication-package/REJOINDER REPLICATION MATERIAL/PACKAGES/x_ols.ado
+replication-package/REJOINDER REPLICATION MATERIAL/PACKAGES/xgmlt.ado
+replication-package/REJOINDER REPLICATION MATERIAL/2026_10_28_Tables_Rejoinder.do

@@ -1,0 +1,2 @@
+/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20260415-1/replication-package/REJOINDER REPLICATION MATERIAL/DATASET_ETHNOATLAS.dta
+/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20260415-1/replication-package/__MACOSX/REJOINDER REPLICATION MATERIAL/._DATASET_ETHNOATLAS.dta

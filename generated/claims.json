@@ -1,0 +1,113 @@
+{
+  "data_sources": [
+    {
+      "name": "Mayshar, Moav, and Pascali (2022) dataset of 952 pre-industrial societies (JPE 130(4): 1091-1144)",
+      "url_or_doi": null,
+      "access_date": null
+    }
+  ],
+  "data_processing_steps": [
+    {
+      "description": "Define LandProd_i = max{C_i, T_i}, where C_i and T_i are potential cereal and tuber yields.",
+      "variables_involved": [
+        "LandProd",
+        "C",
+        "T"
+      ]
+    },
+    {
+      "description": "Define the excluded instrument CerAdv_i = Z_i = C_i - T_i (potential yield advantage of cereals over tubers/roots).",
+      "variables_involved": [
+        "CerAdv",
+        "C",
+        "T"
+      ]
+    },
+    {
+      "description": "Algebraic/expository point (not an estimation sample restriction): for the ~99% of societies where C_i > T_i, LandProd_i = C_i, so on this subsample, residualizing Z on an intercept and LandProd gives Z-tilde_i = -T-tilde_i (tuber productivity residual), since the cereal component is fully absorbed by the LandProd control.",
+      "variables_involved": [
+        "CerAdv",
+        "LandProd",
+        "C",
+        "T"
+      ]
+    },
+    {
+      "description": "CDHP's winsorization procedure (contrasted with, not performed by, this paper): cap the raw instrument at cutoff k via Z_i -> min{Z_i, k}, leaving LandProd_i unchanged. Define a_i = (Z_i - k)_+. The winsorized instrument becomes Z^W_i = C_i - (T_i + a_i), and after partialling out LandProd (=C_i), the residualized instrument is Z-tilde^W_i = -(T+a)-tilde_i.",
+      "variables_involved": [
+        "CerAdv",
+        "LandProd",
+        "C",
+        "T",
+        "a"
+      ]
+    },
+    {
+      "description": "Table R1 construction: top-winsorize C_i and T_i separately at the stated upper-tail cutoff (1%, 2%, 3%, 5%, or 10%), then reconstruct CerAdv and LandProd from the winsorized C and T before re-estimating MMP Table 1 columns 2-6 (reported as table columns 1-5).",
+      "variables_involved": [
+        "C",
+        "T",
+        "CerAdv",
+        "LandProd",
+        "CerMain",
+        "Hier"
+      ]
+    },
+    {
+      "description": "Table A1 construction: top-winsorize (cap) C_i at the stated upper-tail cutoff and bottom-winsorize (floor) T_i at the corresponding lower-tail cutoff (1%, 2%, 3%, 5%, or 10%), then reconstruct CerAdv and LandProd from the capped/floored C and T before re-estimating.",
+      "variables_involved": [
+        "C",
+        "T",
+        "CerAdv",
+        "LandProd",
+        "CerMain",
+        "Hier"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "label": "Table R1",
+      "title": "Robustness to winsorizing the upper tails of cereal and tuber productivity",
+      "estimator": "2SLS (column 5 is 2SLS with post-double-selection, PDS)",
+      "outcome_var": "Hier (society's hierarchical complexity)",
+      "key_regressors": [
+        "CerMain (indicator for cereals as main crop)"
+      ],
+      "controls": [
+        "Continent fixed effects (col. 2-4; status '...' in col. 5)",
+        "LandProd (land productivity) - control present only in column 3",
+        "Dependence on agriculture - control present only in column 4",
+        "Post-double-selection (PDS) set of additional controls in column 5 - not individually enumerated in the text"
+      ],
+      "fixed_effects": [
+        "Continent fixed effects (columns 2-4; unspecified/'...' in column 5; absent in column 1)"
+      ],
+      "clustering": "Three conventions reported in parentheses for each coefficient (rows 1-3 under each panel, except column 5 which reports only the first): (1) standard errors clustered at the country level; (2) standard errors adjusted for spatial correlation following Conley (1999) with a 5 decimal-degree distance cutoff; (3) same Conley (1999) adjustment with a 10 decimal-degree distance cutoff.",
+      "sample_restriction": "952 observations in columns 1-4; 877 observations in column 5 (reason for the reduced sample in column 5 not stated in the text)",
+      "data_source": "Mayshar, Moav, and Pascali (2022) 952-society dataset; instrument is CerAdv (potential yield advantage of cereals over tubers), reconstructed after top-winsorizing underlying cereal (C) and tuber (T) potential yields separately at 1%, 2%, 3%, 5%, and 10% cutoffs, compared to an unwinsorized baseline panel reproducing MMP Table 1 columns 2-6 (this table's column 3 = MMP's column 4; this table's column 5 = MMP's column 6, the two specifications examined by CDHP)."
+    },
+    {
+      "label": "Table A1",
+      "title": "Robustness to top winsorizing cereal productivity and bottom winsorizing tuber productivity",
+      "estimator": "2SLS (column 5 is 2SLS with post-double-selection, PDS)",
+      "outcome_var": "Hier (society's hierarchical complexity)",
+      "key_regressors": [
+        "CerMain (indicator for cereals as main crop)"
+      ],
+      "controls": [
+        "Continent fixed effects (col. 2-4; status '...' in col. 5)",
+        "LandProd (land productivity) - control present only in column 3",
+        "Dependence on agriculture - control present only in column 4",
+        "Post-double-selection (PDS) set of additional controls in column 5 - not individually enumerated in the text"
+      ],
+      "fixed_effects": [
+        "Continent fixed effects (columns 2-4; unspecified/'...' in column 5; absent in column 1)"
+      ],
+      "clustering": "Same as Table R1: standard errors clustered at the country level, and standard errors adjusted for spatial correlation following Conley (1999) with distance cutoffs of 5 and 10 decimal degrees, respectively (column 5 reports only the first convention).",
+      "sample_restriction": "952 observations in columns 1-4; 877 observations in column 5 (reason for the reduced sample in column 5 not stated in the text)",
+      "data_source": "Same as Table R1 (Mayshar, Moav, and Pascali 2022 dataset), except cereal potential yield (C) is top-capped at the stated upper-tail cutoff and tuber potential yield (T) is bottom-floored at the corresponding lower-tail cutoff (1%, 2%, 3%, 5%, 10%) before CerAdv and LandProd are reconstructed."
+    }
+  ],
+  "figures": []
+}

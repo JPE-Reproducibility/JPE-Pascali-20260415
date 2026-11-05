@@ -1,0 +1,8 @@
+/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20260415-1/replication-package/REJOINDER REPLICATION MATERIAL/PACKAGES/x_gmm.ado
+/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20260415-1/replication-package/REJOINDER REPLICATION MATERIAL/PACKAGES/x_ols.ado
+/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20260415-1/replication-package/REJOINDER REPLICATION MATERIAL/PACKAGES/xgmlt.ado
+/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20260415-1/replication-package/__MACOSX/REJOINDER REPLICATION MATERIAL/PACKAGES/._x_gmm.ado
+/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20260415-1/replication-package/__MACOSX/REJOINDER REPLICATION MATERIAL/PACKAGES/._x_ols.ado
+/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20260415-1/replication-package/__MACOSX/REJOINDER REPLICATION MATERIAL/PACKAGES/._xgmlt.ado
+/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20260415-1/replication-package/REJOINDER REPLICATION MATERIAL/2026_10_28_Tables_Rejoinder.do
+/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20260415-1/replication-package/__MACOSX/REJOINDER REPLICATION MATERIAL/._2026_10_28_Tables_Rejoinder.do
