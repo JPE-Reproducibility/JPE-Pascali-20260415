@@ -1,0 +1,261 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  ldi
+       log:  /Users/paulogcd/JPE-Pascali-20260415/logs/logfile__9_Nov_2026-13_17_36-paulogcd.log
+  log type:  text
+ opened on:   9 Nov 2026, 13:17:36
+r; t=0.00 13:17:36
+
+. 
+. /* capture what system we are running on */
+. 
+. di in red "HOSTNAME: `c(hostname)'"
+HOSTNAME: Mac.lan
+r; t=0.00 13:17:36
+
+. 
+. /* used only for system info */
+. log using "`systeminfo'", name(system) replace text
+(file /Users/paulogcd/JPE-Pascali-20260415/logs/system__9_Nov_2026-13_17_36-paulogcd.log not found)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  system
+       log:  /Users/paulogcd/JPE-Pascali-20260415/logs/system__9_Nov_2026-13_17_36-paulogcd.log
+  log type:  text
+ opened on:   9 Nov 2026, 13:17:36
+r; t=0.00 13:17:36
+
+. 
+. /* It will provide some info about how and when the program was run */
+. 
+. /* install any packages locally */
+. di "=== Redirecting where Stata searches for ado files ==="
+=== Redirecting where Stata searches for ado files ===
+r; t=0.00 13:17:36
+
+. capture mkdir "$rootdir/ado"
+r; t=0.00 13:17:36
+
+. adopath - PERSONAL
+  [1]  (BASE)      "/Applications/Stata/ado/base/"
+  [2]  (SITE)      "/Applications/Stata/ado/site/"
+  [3]              "."
+  [4]  (PLUS)      "/Users/paulogcd/Library/Application Support/Stata/ado/plus/"
+  [5]  (OLDPLACE)  "~/ado/"
+r; t=0.00 13:17:36
+
+. adopath - OLDPLACE
+  [1]  (BASE)      "/Applications/Stata/ado/base/"
+  [2]  (SITE)      "/Applications/Stata/ado/site/"
+  [3]              "."
+  [4]  (PLUS)      "/Users/paulogcd/Library/Application Support/Stata/ado/plus/"
+r; t=0.00 13:17:36
+
+. adopath - SITE
+  [1]  (BASE)      "/Applications/Stata/ado/base/"
+  [2]              "."
+  [3]  (PLUS)      "/Users/paulogcd/Library/Application Support/Stata/ado/plus/"
+r; t=0.00 13:17:36
+
+. sysdir set PLUS     "$rootdir/ado/plus"
+r; t=0.00 13:17:36
+
+. sysdir set PERSONAL "$rootdir/ado"       // may be needed for some packages
+r; t=0.00 13:17:36
+
+. sysdir
+   STATA:  /Applications/Stata/
+    BASE:  /Applications/Stata/ado/base/
+    SITE:  /Applications/Stata/ado/site/
+    PLUS:  /Users/paulogcd/JPE-Pascali-20260415/ado/plus/
+PERSONAL:  /Users/paulogcd/JPE-Pascali-20260415/ado/
+OLDPLACE:  ~/ado/
+r; t=0.00 13:17:36
+
+. 
+. /*==============================================================================================*/
+. /* If present, add the authors' replication-package specific ado file path                      */
+. /* This is defined above                                                                        */
+. /*==============================================================================================*/
+. 
+. if "`author_adopath'" != "" {             // The author adopath variable is filled out
+.     adopath ++ "$rootdir/`author_adopath'"
+r; t=0.00 13:17:36
+. }
+r; t=0.00 13:17:36
+
+. 
+. /* now let's check what's there */
+. 
+. di "=== Verifying pre-existing ado files - normally, this should be EMPTY upon first run"
+=== Verifying pre-existing ado files - normally, this should be EMPTY upon first run
+r; t=0.00 13:17:36
+
+. adopath
+  [1]  (BASE)      "/Applications/Stata/ado/base/"
+  [2]              "."
+  [3]  (PLUS)      "/Users/paulogcd/JPE-Pascali-20260415/ado/plus/"
+r; t=0.00 13:17:36
+
+. ado
+r; t=0.00 13:17:36
+
+. di "=========================="
+==========================
+r; t=0.00 13:17:36
+
+. 
+. 
+. /* this is long, so we pause the main log file */
+. log off ldi
+      name:  ldi
+       log:  /Users/paulogcd/JPE-Pascali-20260415/logs/logfile__9_Nov_2026-13_17_36-paulogcd.log
+  log type:  text
+ paused on:   9 Nov 2026, 13:17:36
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  ldi
+       log:  /Users/paulogcd/JPE-Pascali-20260415/logs/logfile__9_Nov_2026-13_17_36-paulogcd.log
+  log type:  text
+resumed on:   9 Nov 2026, 13:17:36
+r; t=0.00 13:17:36
+
+. 
+. 
+. /* add packages to the macro */
+.     
+.     display in red "============ Installing packages/commands from SSC ============="
+============ Installing packages/commands from SSC =============
+r; t=0.00 13:17:36
+
+.     display in red "== Packages: `ssc_packages'"
+== Packages: 
+r; t=0.00 13:17:36
+
+.     if !missing("`ssc_packages'") {
+.         foreach pkg in `ssc_packages' {
+  2.             capture which `pkg'
+  3.             if _rc == 111 {                 
+  4.                dis "Installing `pkg'"
+  5.                 ssc install `pkg', replace
+  6.             }
+  7.             which `pkg'
+  8.         }
+r; t=0.00 13:17:36
+.     }
+r; t=0.00 13:17:36
+
+. 
+. /* add unconditionally installed packages */
+.     display in red "=============== Unconditionally installed packages from SSC ==============="
+=============== Unconditionally installed packages from SSC ===============
+r; t=0.00 13:17:36
+
+.     display in red "== Packages: `ssc_unconditional'"
+== Packages: 
+r; t=0.00 13:17:36
+
+.     if !missing("`ssc_unconditional'") {
+.         foreach pkg in `ssc_unconditional' {
+  2.             dis "Installing `pkg'"
+  3.             ssc install `pkg', replace
+  4.         }
+r; t=0.00 13:17:36
+.     }
+r; t=0.00 13:17:36
+
+. 
+. /*==============================================================================================*/
+. /* If you need to "net install" packages, add lines to this section                             */
+.     * Install packages using net
+.     * net install grc1leg, from("http://www.stata.com/users/vwiggins/")
+. 
+. /*==============================================================================================*/
+. /* yet other programs have no install capability, and may need to be copied */
+. /*==============================================================================================*/
+. 
+. // e.g.
+. //  copy (URL) (name_of_file.ado)
+. // example:
+. // copy http://www.sacarny.com/wp-content/uploads/2015/08/ebayes.ado ebayes.ado
+. 
+. 
+. /*==============================================================================================*/
+. /* This toolbox allows us to run code that still contains interactive commands (which it should not) */
+. /*==============================================================================================*/
+. 
+. net install cli-compat, all replace from("https://raw.githubusercontent.com/aeadataeditor/cli-compat-stata/master")
+checking cli-compat consistency and verifying not already installed...
+installing into /Users/paulogcd/JPE-Pascali-20260415/ado/plus/...
+installation complete.
+r; t=2.20 13:17:38
+
+. 
+. /*-------------- Sometimes, you may get the dreaded esttab error about paths -------------------*/
+. /* in that case, uncomment the following line, and overwrite the estout package with the newer one */
+. 
+. // net install estout, replace from(https://raw.githubusercontent.com/benjann/estout/master/)
+. 
+. /*==============================================================================================*/
+. /* after installing all packages, it may be necessary to issue the mata mlib index command */
+. /* This should always be the LAST command after installing all packages                    */
+. /*==============================================================================================*/
+. 
+.         mata: mata mlib index
+.mlib libraries to be searched are now
+    lmatabase;lmatamcmc;lmatabma;lmatacollect;lmatatab;lmataivqreg;lmatamixlog;lmatami;lmatasem;lmatagsem;lmatasp;lmatapss;lmatalasso;lmatapostest;lmatapath;lmatameta;lmatah2o;lmataopt;lmatats;l
+> matasvy;lmatajm;lmatanumlib;lmatahetdid;lmataado;lmatadata;lmataerm;lmatafc
+r; t=0.00 13:17:38
+
+. 
+. /*==============================================================================================*/
+. /* This is specific to AEA replication environment. May not be needed if no confidential data   */
+. /* are used in the reproducibility check.                                                       */
+. /* Replicator should check the JIRA field "Working location of restricted data" for right path  */
+. /*==============================================================================================*/
+. 
+. global sdrive ""
+r; t=0.00 13:17:38
+
+. 
+. 
+. /*==============================================================================================*/
+. /* After all the setup work, let's check again what's installed in the ado directories          */
+. /*==============================================================================================*/
+. 
+. 
+. di "=== Verifying ado files after all install steps"
+=== Verifying ado files after all install steps
+r; t=0.00 13:17:38
+
+. adopath
+  [1]  (BASE)      "/Applications/Stata/ado/base/"
+  [2]              "."
+  [3]  (PLUS)      "/Users/paulogcd/JPE-Pascali-20260415/ado/plus/"
+r; t=0.00 13:17:38
+
+. ado
+
+[1] package cli-compat from https://raw.githubusercontent.com/aeadataeditor/cli-compat-stata/master
+      'cli-compat': Commands that provide compatibility with programs written with GUI Stata in mind.
+r; t=0.00 13:17:38
+
+. di "=========================="
+==========================
+r; t=0.00 13:17:38
+
+. 
+. 
+. 
+. di "========================================= END SETUP + DIAGNOSTICS ===================================="
+========================================= END SETUP + DIAGNOSTICS ====================================
+r; t=0.00 13:17:38
+
+. 
+end of do-file
+
+r; t=0.00 13:17:38
+
+. di codedir
+codedir not found
+r(111); t=0.00 13:17:50
+
+. exit

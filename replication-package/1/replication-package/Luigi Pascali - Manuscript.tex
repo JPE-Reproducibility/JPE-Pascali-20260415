@@ -1,0 +1,202 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{caption}
+
+\captionsetup[table]{skip=4pt}
+\setlength{\parskip}{0pt}
+
+
+\begin{document}
+	\fontsize{10.5pt}{12.5pt}\selectfont
+	\vspace*{-0.7in}
+	
+	\begin{center}
+		
+		{\normalsize\bfseries The Origin of the State: Land Productivity or Appropriability?\\			
+			Rejoinder}
+		\vspace{0.2em}
+		{\normalsize Joram Mayshar, Omer Moav, and Luigi Pascali}
+		
+	\end{center}
+	
+	\vspace{0.4em}
+
+In Mayshar, Moav, and Pascali (2022; MMP), we argue that cultivation of appropriable crops —specifically cereals— rather than land productivity per se was an important driver of state emergence. We test this hypothesis using four distinct datasets. Cook et al. (2026; CDHP) reanalyze the first test, based on 952 pre-industrial societies and the relationship:
+\begin{equation}
+	Hier_i = \beta\,CerMain_i + \gamma' X_i + \varepsilon_i
+\end{equation}
+where $Hier$ is hierarchical complexity, $CerMain$ is an indicator for cereals as the main crop, and $X$ denotes a set of controls. MMP Table 1 reports OLS (col. 1) and 2SLS estimates (cols. 2--6), adding progressively richer controls: continent fixed effects, land productivity ($LandProd$), dependence on agriculture, and a post-double-selection (PDS) set of additional controls. In the 2SLS estimates, the excluded instrument is the potential yield advantage of cereals over tubers (and roots), $CerAdv$. 
+
+CDHP make two points: first, cereal cultivation matters for the transition from tribe-chiefdom to state, but not from tribe to chiefdom; second, \emph{controlling for land productivity} (cols. 4, 6 in MMP Table 1), significance at 10 percent is lost once $CerAdv$ is winsorized above the top 2.1 percent of societies. CDHP’s first point has merit, but no implications for our conclusion on state emergence. Their second finding warrants scrutiny and a more qualified economic interpretation. To see why, consider what variation in the instrument identifies cereal cultivation \emph{once land productivity is held constant}.
+
+Let $C_i$ and $T_i$ denote potential cereal and tuber yield. MMP define $LandProd_i=\max\{C_i,T_i\}$ and $Z_i \equiv CerAdv_i = C_i-T_i$. For roughly 99\% of societies, $C_i>T_i$, so $LandProd_i=C_i$. For this algebraic argument, restrict attention to this subsample, and let tildes denote residuals from linear projections on an intercept and land productivity, computed within this subsample. Since $LandProd_i=C_i$, the cereal component in $CerAdv$ is fully partialled out and the residualized instrument becomes $\widetilde{Z}_i=-\widetilde{T}_i$. Thus, conditional on land productivity, the identifying variation in the instrument comes essentially from tuber productivity. Put differently, once cereal productivity is held constant, a larger value of $CerAdv$ identifies a location where tubers are less productive.
+
+These identities clarify the implications of CDHP’s winsorization. CDHP cap the instrument at a cutoff $k$, replacing $Z_i$ with $\min\{Z_i,k\}$, while leaving $LandProd_i$ unchanged. Define $a_i \equiv (Z_i-k)_{+}$. For an affected society, the winsorized instrument is $Z^{W}_i=C_i-(T_i+a_i)$, while the land-productivity control remains $C_i$. After partialling out land productivity, the residualized instrument becomes $\widetilde{Z}^{W}_i=-\widetilde{(T+a)}_i$. Thus, CDHP’s procedure does not simply reduce the influence of an extreme observation: locations with the largest cereal advantage are mechanically assigned higher implied tuber productivity while their cereal productivity is unchanged. 
+
+Put simply, CDHP identify outliers in the raw distribution of the instrument, $CerAdv$. But, because partialling out land productivity changes the relevant variation from $C_i-T_i$ to $-\widetilde T_i$, an outlier in the raw instrument need not be an outlier in the residualized instrument. Therefore, CDHP's winsorization result does not, by itself, establish that the estimates are driven by extreme values of the residualized instrument. To investigate the economic concern about extreme agricultural productivity conditions, we specify tail treatments directly on the underlying cereal and tuber yields and reconstruct both cereal advantage and land productivity. We consider two exercises. If the concern is extremely high crop productivity, we top-winsorize $C_i$ and $T_i$ separately before reconstructing $CerAdv$ and $LandProd$. Table R1 reports the MMP Table 1 2SLS estimates alongside specifications top-winsorizing $C_i$ and $T_i$ at the 1\%, 2\%, 3\%, 5\%, and 10\% cutoffs. The estimates remain stable across columns, including those for which CDHP report sensitivity. To examine sensitivity to high cereal yields or low tuber yields that can generate large cereal advantage, we top-winsorize $C_i$ and bottom-winsorize $T_i$ before reconstructing $CerAdv$ and $LandProd$. Appendix Table A1 confirms that these results are similarly robust.
+
+\medskip
+\noindent\textbf{References}
+\smallskip
+
+Cook, Duprey, Heyes, and Pelli. 2026.
+``The Origin of the State: Land Productivity or Appropriability? A Comment.''
+\textit{Journal of Political Economy} 134(7): 2215--20.
+
+Mayshar, Moav, and Pascali. 2022.
+``The Origin of the State: Land Productivity or Appropriability?''
+\textit{Journal of Political Economy} 130(4): 1091--1144.
+
+\bigskip
+\renewcommand{\thetable}{R\arabic{table}}
+
+\begin{table}[htbp]\centering
+\footnotesize
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Robustness to winsorizing the upper tails of cereal and tuber productivity}
+\label{tab:main}
+\begin{tabular}{l*{5}{c}}
+\hline\hline
+&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
+\hline
+\multicolumn{6}{l}{\textit{MMP Table 1: no winsorization}}\\
+CerMain  &    1.170  &    0.892  &    1.064  &    0.830  &    0.797  \\
+         &  (0.001)\sym{***}&  (0.046)\sym{**} &  (0.056)\sym{*}  &  (0.134)  &  (0.035)\sym{**} \\
+         &  (0.000)\sym{***} & (0.011)\sym{**} & (0.020)\sym{**}  & (0.052)\sym{*} & \\
+         &  (0.001)\sym{***} & (0.034)\sym{**} & (0.048)\sym{**} & (0.104) & \\
+\hline
+\multicolumn{6}{l}{\textit{Top winsorize 1 percent}}\\
+CerMain  &    1.167  &    0.871  &    1.043  &    0.804  &    0.780  \\
+         &  (0.001)\sym{***}&  (0.050)\sym{**} &  (0.059)\sym{*}  &  (0.142)  &  (0.040)\sym{**} \\
+         &  (0.000)\sym{***} & (0.014)\sym{**} & (0.022)\sym{**} & (0.060)\sym{*} & \\
+         &  (0.001)\sym{***} & (0.039)\sym{**} & (0.051)\sym{*} & (0.116) & \\
+\hline
+\multicolumn{6}{l}{\textit{Top winsorize 2 percent}}\\
+CerMain  &    1.149  &    0.816  &    0.996  &    0.738  &    0.746  \\
+         &  (0.001)\sym{***}&  (0.063)\sym{*}  &  (0.063)\sym{*}  &  (0.168)  &  (0.049)\sym{**} \\
+         &  (0.000)\sym{***} & (0.020)\sym{**} & (0.026)\sym{**} & (0.082)\sym{*} & \\
+         &  (0.001)\sym{***} & (0.051)\sym{*}  & (0.056)\sym{*}  & (0.144) & \\
+
+\hline
+\multicolumn{6}{l}{\textit{Top winsorize 3 percent}}\\
+
+CerMain         &    1.135         &    0.775         &    0.967         &    0.690         &    0.730         \\
+&  (0.001)\sym{***}&  (0.075)\sym{*}  &  (0.064)\sym{*}  &  (0.190)         &  (0.052)\sym{*}  \\
+& (0.000)\sym{***} & (0.026)\sym{**} & (0.027)\sym{**}  & (0.099)\sym{*}  \\
+& (0.001)\sym{***} & (0.061)\sym{*} & (0.058)\sym{*}  & (0.164) \\
+
+\hline
+\multicolumn{6}{l}{\textit{Top winsorize 5 percent}}\\
+CerMain  &    1.111  &    0.717  &    0.922  &    0.620  &    0.690  \\
+         &  (0.002)\sym{***}&  (0.099)\sym{*}  &  (0.069)\sym{*}  &  (0.234)  &  (0.062)\sym{*}  \\
+         &  (0.000)\sym{***} & (0.038)\sym{**} & (0.032)\sym{**} & (0.133) & \\
+         &  (0.002)\sym{***} & (0.079)\sym{*} & (0.064)\sym{*} & (0.202) & \\
+\hline
+\multicolumn{6}{l}{\textit{Top winsorize 10 percent}}\\
+CerMain  &    1.126  &    0.725  &    0.940  &    0.628  &    0.717  \\
+         &  (0.001)\sym{***}&  (0.090)\sym{*}  &  (0.060)\sym{*}  &  (0.222)  &  (0.047)\sym{**} \\
+         &  (0.000)\sym{***} & (0.034)\sym{**} & (0.026)\sym{**} & (0.124) & \\
+         &  (0.001)\sym{***} & (0.072)\sym{*} & (0.054)\sym{*} & (0.190) & \\
+\hline
+Observations       &  952 &  952 &  952 &  952 &  877 \\
+Continent FE       &   NO & YES & YES & YES & \ldots \\
+Control Land Prod  &   NO &  NO & YES &  NO & \ldots \\
+Control Agriculture&   NO &  NO &  NO & YES & \ldots \\
+Estimation Method  & 2SLS & 2SLS & 2SLS & 2SLS & 2SLS PDS \\
+\hline\hline
+\end{tabular}
+
+\vspace{2pt}
+\begin{minipage}{0.98\textwidth}
+\scriptsize \textit{Notes:} The dependent variable is the society's hierarchical
+complexity. Columns (1)--(5) reproduce columns 2--6 of MMP Table 1; column (3) is MMP's
+column 4 and column (5) is MMP's column 6, the two specifications examined by CDHP. Cereal
+and tuber potential yields are winsorized at the stated upper-tail cutoff and $CerAdv$ and
+$LandProd$ are then reconstructed from the winsorized primitives.
+Parentheses report p-values under the three conventions used in MMP: standard errors
+clustered at the country level, and standard errors adjusted for spatial correlation
+following Conley (1999) with distance cut-offs of 5 and 10 decimal degrees, respectively.
+\sym{*}, \sym{**}, \sym{***} denote significance at the 10\%, 5\%, and 1\%
+levels. 
+\end{minipage}
+\end{table}
+
+\clearpage
+\appendix
+\section*{Appendix}
+
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+
+\begin{table}[htbp]\centering
+\footnotesize
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Robustness to top winsorizing cereal productivity and bottom winsorizing tuber productivity}
+\label{tab:appendix}
+\begin{tabular}{l*{5}{c}}
+\hline\hline
+&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
+\hline
+\multicolumn{6}{l}{\textit{MMP Table 1: no winsorization}}\\
+CerMain  &    1.170  &    0.892  &    1.064  &    0.830  &    0.797  \\
+         &  (0.001)\sym{***}&  (0.046)\sym{**} &  (0.056)\sym{*}  &  (0.134)  &  (0.035)\sym{**} \\
+         &  (0.000)\sym{***} & (0.011)\sym{**} & (0.020)\sym{**}  & (0.052)\sym{*} & \\
+         &  (0.001)\sym{***} & (0.034)\sym{**} & (0.048)\sym{**} & (0.104) & \\
+\hline
+\multicolumn{6}{l}{\textit{Winsorize 1 percent}}\\
+CerMain  &    1.169  &    0.873  &    1.047  &    0.806  &    0.784  \\
+         &  (0.001)\sym{***}&  (0.049)\sym{**} &  (0.058)\sym{*}  &  (0.141)  &  (0.039)\sym{**} \\
+         &  (0.000)\sym{***} & (0.014)\sym{**} & (0.022)\sym{**} & (0.060)\sym{*} & \\
+         &  (0.001)\sym{***} & (0.039)\sym{**} & (0.051)\sym{*} & (0.116) & \\
+\hline
+\multicolumn{6}{l}{\textit{Winsorize 2 percent}}\\
+CerMain  &    1.150  &    0.817  &    0.998  &    0.738  &    0.746  \\
+         &  (0.001)\sym{***}&  (0.062)\sym{*}  &  (0.063)\sym{*}  &  (0.168)  &  (0.048)\sym{**} \\
+         &  (0.000)\sym{***} & (0.021)\sym{**} & (0.026)\sym{**} & (0.082)\sym{*} & \\
+         &  (0.001)\sym{***} & (0.051)\sym{*} & (0.057)\sym{*} & (0.145) & \\
+         
+\hline
+\multicolumn{6}{l}{\textit{Winsorize 3 percent}}\\
+CerMain         &    1.132         &    0.769         &    0.957         &    0.680         &    0.714         \\
+&  (0.001)\sym{***}&  (0.077)\sym{*}  &  (0.067)\sym{*}  &  (0.198)         &  (0.057)\sym{*}  \\
+& (0.000)\sym{***} & (0.028)\sym{**} & (0.030)\sym{**} & (0.105) \\
+& (0.001)\sym{***} & (0.063)\sym{*} & (0.062)\sym{*} & (0.171) \\
+
+\hline
+\multicolumn{6}{l}{\textit{Winsorize 5 percent}}\\
+CerMain  &    1.108  &    0.709  &    0.909  &    0.606  &    0.667  \\
+         &  (0.002)\sym{***}&  (0.102)  &  (0.073)\sym{*}  &  (0.248)  &  (0.072)\sym{*}  \\
+         &  (0.000)\sym{***} & (0.041)\sym{**} & (0.037)\sym{**} & (0.146) & \\
+         &  (0.002)\sym{***} & (0.084)\sym{*} & (0.070)\sym{*} & (0.217) & \\
+\hline
+\multicolumn{6}{l}{\textit{Winsorize 10 percent}}\\
+CerMain  &    1.133  &    0.716  &    0.930  &    0.611  &    0.663  \\
+         &  (0.002)\sym{***}&  (0.101)  &  (0.069)\sym{*}  &  (0.252)  &  (0.067)\sym{*}  \\
+         &  (0.000)\sym{***} & (0.040)\sym{**} & (0.036)\sym{**} & (0.147) & \\
+         &  (0.001)\sym{***} & (0.079)\sym{*} & (0.066)\sym{*} & (0.216) & \\
+\hline
+Observations       &  952 &  952 &  952 &  952 &  877 \\
+Continent FE       &   NO & YES & YES & YES & \ldots \\
+Control Land Prod  &   NO &  NO & YES &  NO & \ldots \\
+Control Agriculture&   NO &  NO &  NO & YES & \ldots \\
+Estimation Method  & 2SLS & 2SLS & 2SLS & 2SLS & 2SLS PDS \\
+\hline\hline
+\end{tabular}
+
+\vspace{2pt}
+\begin{minipage}{0.98\textwidth}
+\scriptsize \textit{Notes:} As in Table~\ref{tab:main}, except that cereal potential yield
+is capped at the stated upper-tail cutoff and tuber potential yield is floored at the
+corresponding lower-tail cutoff, before $CerAdv$ and $LandProd$ are reconstructed.
+\end{minipage}
+\end{table}
+
+\end{document}

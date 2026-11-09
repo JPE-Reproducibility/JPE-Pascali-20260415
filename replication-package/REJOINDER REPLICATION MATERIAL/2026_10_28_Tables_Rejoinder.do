@@ -28,7 +28,8 @@ set more off
 * Root directory of the replication package
 
 
-global MAIN "XXXXXXXXXXXX"     /* < Users should modify this path to match their local installation.*/
+* global MAIN "XXXXXXXXXXXX"     /* < Users should modify this path to match their local installation.*/
+global MAIN "/Users/paulogcd/JPE-Pascali-20260415/replication-package/REJOINDER REPLICATION MATERIAL"     /* < Users should modify this path to match their local installation.*/
 
 cd "$MAIN"
 

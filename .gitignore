@@ -172,3 +172,5 @@ TEMPLATE_files/
 *.fst
 *.FST
 paper-source/**
+
+/sandbox.bash

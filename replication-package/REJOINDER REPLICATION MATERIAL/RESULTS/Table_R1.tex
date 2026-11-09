@@ -1,0 +1,462 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Winsorize at percentile 0}
+\begin{tabular}{l*{5}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+\hline
+CerMain         &    1.170         &    0.892         &    1.064         &    0.830         &    0.797         \\
+                &  (0.001)\sym{***}&  (0.046)\sym{**} &  (0.056)\sym{*}  &  (0.134)         &  (0.035)\sym{**} \\
+LandProd        &                  &                  &   -0.037         &                  &    0.020         \\
+                &                  &                  &  (0.670)         &                  &  (0.765)         \\
+Dep. agriculture&                  &                  &                  &    0.259         &                  \\
+                &                  &                  &                  &  (0.635)         &                  \\
+\hline
+Observations    &      952         &      952         &      952         &      952         &      877         \\
+F               &    52.15         &    33.13         &    13.06         &    20.38         &    16.10         \\
+Continent FE    &       NO         &      YES         &      YES         &      YES         &      ...         \\
+Estimation      &     2SLS         &     2SLS         &     2SLS         &     2SLS         & 2SLS PDS         \\
+\hline\hline
+\end{tabular}
+\end{table}
+\begin{tabular}{lcccc}
+\multicolumn{5}{c}{windsorize at 0} \\ \hline
+ & (1) & (2) & (3) & (4) \\
+VARIABLES &  &  &  &  \\ \hline
+ &  &  &  &  \\
+CerMain & 1.170*** & 0.892** & 1.064** & 0.830 \\
+ & (0.001) & (0.034) & (0.048) & (0.104) \\
+std\_max\_new &  &  & -0.037 &  \\
+ &  &  & (0.603) &  \\
+Dep. Agri. &  &  &  & 0.259 \\
+ &  &  &  & (0.588) \\
+L\_hier1 & . & . & . & . \\
+ & (.) & (.) & (.) & (.) \\
+dummy\_continental3==Africa &  & 0.235 & 0.135 & 0.245 \\
+ &  & (0.457) & (0.721) & (0.450) \\
+dummy\_continental3==Asia &  & 0.377 & 0.250 & 0.398 \\
+ &  & (0.315) & (0.587) & (0.319) \\
+dummy\_continental3==Europe &  & 1.408*** & 1.274** & 1.446*** \\
+ &  & (0.001) & (0.011) & (0.002) \\
+dummy\_continental3==N America &  & -0.225 & -0.294 & -0.134 \\
+ &  & (0.290) & (0.230) & (0.697) \\
+dummy\_continental3==S America &  & -0.197 & -0.201 & -0.175 \\
+ &  & (0.223) & (0.221) & (0.325) \\
+ &  &  &  &  \\
+Observations & 952 & 952 & 952 & 952 \\
+R-squared & 0.782 & 0.811 & 0.802 & 0.814 \\
+ Cragg-Donald Wald F & 49.34 & 34.76 & 19.70 & 23.18 \\ \hline
+\end{tabular}
+\begin{tabular}{lcccc}
+\multicolumn{5}{c}{windsorize at 0} \\ \hline
+ & (1) & (2) & (3) & (4) \\
+VARIABLES &  &  &  &  \\ \hline
+ &  &  &  &  \\
+CerMain & 1.170*** & 0.892** & 1.064** & 0.830* \\
+ & (0.000) & (0.011) & (0.020) & (0.052) \\
+std\_max\_new &  &  & -0.037 &  \\
+ &  &  & (0.585) &  \\
+Dep. Agri. &  &  &  & 0.259 \\
+ &  &  &  & (0.515) \\
+L\_hier1 & . & . & . & . \\
+ & (.) & (.) & (.) & (.) \\
+dummy\_continental3==Africa &  & 0.235 & 0.135 & 0.245 \\
+ &  & (0.372) & (0.671) & (0.367) \\
+dummy\_continental3==Asia &  & 0.377 & 0.250 & 0.398 \\
+ &  & (0.235) & (0.522) & (0.240) \\
+dummy\_continental3==Europe &  & 1.408*** & 1.274*** & 1.446*** \\
+ &  & (0.000) & (0.003) & (0.000) \\
+dummy\_continental3==N America &  & -0.225 & -0.294 & -0.134 \\
+ &  & (0.184) & (0.152) & (0.631) \\
+dummy\_continental3==S America &  & -0.197 & -0.201 & -0.175 \\
+ &  & (0.151) & (0.149) & (0.244) \\
+ &  &  &  &  \\
+Observations & 952 & 952 & 952 & 952 \\
+R-squared & 0.782 & 0.811 & 0.802 & 0.814 \\
+ Cragg-Donald Wald F & 74.90 & 52.50 & 29.20 & 37.83 \\ \hline
+\end{tabular}
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Winsorize at percentile 1}
+\begin{tabular}{l*{5}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+\hline
+CerMain         &    1.167         &    0.871         &    1.043         &    0.804         &    0.780         \\
+                &  (0.001)\sym{***}&  (0.050)\sym{**} &  (0.059)\sym{*}  &  (0.142)         &  (0.040)\sym{**} \\
+LandProd        &                  &                  &   -0.031         &                  &    0.014         \\
+                &                  &                  &  (0.665)         &                  &  (0.794)         \\
+Dep. agriculture&                  &                  &                  &    0.278         &                  \\
+                &                  &                  &                  &  (0.602)         &                  \\
+\hline
+Observations    &      952         &      952         &      952         &      952         &      877         \\
+F               &    55.63         &    32.27         &    13.21         &    20.55         &    15.47         \\
+Continent FE    &       NO         &      YES         &      YES         &      YES         &      ...         \\
+Estimation      &     2SLS         &     2SLS         &     2SLS         &     2SLS         & 2SLS PDS         \\
+\hline\hline
+\end{tabular}
+\end{table}
+\begin{tabular}{lcccc}
+\multicolumn{5}{c}{windsorize at 1} \\ \hline
+ & (1) & (2) & (3) & (4) \\
+VARIABLES &  &  &  &  \\ \hline
+ &  &  &  &  \\
+CerMain & 1.167*** & 0.871** & 1.043* & 0.804 \\
+ & (0.001) & (0.039) & (0.051) & (0.116) \\
+std\_max\_new &  &  & -0.031 &  \\
+ &  &  & (0.597) &  \\
+Dep. Agri. &  &  &  & 0.278 \\
+ &  &  &  & (0.560) \\
+L\_hier1 & . & . & . & . \\
+ & (.) & (.) & (.) & (.) \\
+dummy\_continental3==Africa &  & 0.250 & 0.150 & 0.260 \\
+ &  & (0.430) & (0.689) & (0.422) \\
+dummy\_continental3==Asia &  & 0.394 & 0.267 & 0.417 \\
+ &  & (0.295) & (0.559) & (0.298) \\
+dummy\_continental3==Europe &  & 1.424*** & 1.289*** & 1.465*** \\
+ &  & (0.001) & (0.010) & (0.002) \\
+dummy\_continental3==N America &  & -0.219 & -0.288 & -0.121 \\
+ &  & (0.304) & (0.238) & (0.725) \\
+dummy\_continental3==S America &  & -0.195 & -0.198 & -0.171 \\
+ &  & (0.228) & (0.227) & (0.337) \\
+ &  &  &  &  \\
+Observations & 952 & 952 & 952 & 952 \\
+R-squared & 0.782 & 0.812 & 0.804 & 0.815 \\
+ Cragg-Donald Wald F & 53 & 34.46 & 20.06 & 22.85 \\ \hline
+\end{tabular}
+\begin{tabular}{lcccc}
+\multicolumn{5}{c}{windsorize at 1} \\ \hline
+ & (1) & (2) & (3) & (4) \\
+VARIABLES &  &  &  &  \\ \hline
+ &  &  &  &  \\
+CerMain & 1.167*** & 0.871** & 1.043** & 0.804* \\
+ & (0.000) & (0.014) & (0.022) & (0.060) \\
+std\_max\_new &  &  & -0.031 &  \\
+ &  &  & (0.579) &  \\
+Dep. Agri. &  &  &  & 0.278 \\
+ &  &  &  & (0.484) \\
+L\_hier1 & . & . & . & . \\
+ & (.) & (.) & (.) & (.) \\
+dummy\_continental3==Africa &  & 0.250 & 0.150 & 0.260 \\
+ &  & (0.344) & (0.634) & (0.338) \\
+dummy\_continental3==Asia &  & 0.394 & 0.267 & 0.417 \\
+ &  & (0.216) & (0.491) & (0.220) \\
+dummy\_continental3==Europe &  & 1.424*** & 1.289*** & 1.465*** \\
+ &  & (0.000) & (0.003) & (0.000) \\
+dummy\_continental3==N America &  & -0.219 & -0.288 & -0.121 \\
+ &  & (0.197) & (0.160) & (0.665) \\
+dummy\_continental3==S America &  & -0.195 & -0.198 & -0.171 \\
+ &  & (0.155) & (0.154) & (0.256) \\
+ &  &  &  &  \\
+Observations & 952 & 952 & 952 & 952 \\
+R-squared & 0.782 & 0.812 & 0.804 & 0.815 \\
+ Cragg-Donald Wald F & 79.63 & 52.22 & 29.57 & 37.27 \\ \hline
+\end{tabular}
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Winsorize at percentile 9999999999}
+\begin{tabular}{l*{5}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+\hline
+CerMain         &    1.126         &    0.725         &    0.940         &    0.628         &    0.717         \\
+                &  (0.001)\sym{***}&  (0.090)\sym{*}  &  (0.060)\sym{*}  &  (0.222)         &  (0.047)\sym{**} \\
+LandProd        &                  &                  &   -0.041         &                  &   -0.005         \\
+                &                  &                  &  (0.567)         &                  &  (0.931)         \\
+Dep. agriculture&                  &                  &                  &    0.409         &                  \\
+                &                  &                  &                  &  (0.398)         &                  \\
+\hline
+Observations    &      952         &      952         &      952         &      952         &      877         \\
+F               &    68.59         &    31.32         &    14.93         &    20.52         &    17.58         \\
+Continent FE    &       NO         &      YES         &      YES         &      YES         &      ...         \\
+Estimation      &     2SLS         &     2SLS         &     2SLS         &     2SLS         & 2SLS PDS         \\
+\hline\hline
+\end{tabular}
+\end{table}
+\begin{tabular}{lcccc}
+\multicolumn{5}{c}{windsorize at 9999999999} \\ \hline
+ & (1) & (2) & (3) & (4) \\
+VARIABLES &  &  &  &  \\ \hline
+ &  &  &  &  \\
+CerMain & 1.126*** & 0.725* & 0.940* & 0.628 \\
+ & (0.001) & (0.072) & (0.054) & (0.190) \\
+std\_max\_new &  &  & -0.041 &  \\
+ &  &  & (0.469) &  \\
+Dep. Agri. &  &  &  & 0.409 \\
+ &  &  &  & (0.355) \\
+L\_hier1 & . & . & . & . \\
+ & (.) & (.) & (.) & (.) \\
+dummy\_continental3==Africa &  & 0.353 & 0.231 & 0.368 \\
+ &  & (0.241) & (0.504) & (0.229) \\
+dummy\_continental3==Asia &  & 0.512 & 0.354 & 0.545 \\
+ &  & (0.157) & (0.404) & (0.153) \\
+dummy\_continental3==Europe &  & 1.533*** & 1.364*** & 1.592*** \\
+ &  & (0.000) & (0.004) & (0.000) \\
+dummy\_continental3==N America &  & -0.174 & -0.265 & -0.031 \\
+ &  & (0.398) & (0.256) & (0.924) \\
+dummy\_continental3==S America &  & -0.178 & -0.182 & -0.143 \\
+ &  & (0.268) & (0.264) & (0.419) \\
+ &  &  &  &  \\
+Observations & 952 & 952 & 952 & 952 \\
+R-squared & 0.784 & 0.817 & 0.809 & 0.822 \\
+ Cragg-Donald Wald F & 64.55 & 31.89 & 22.35 & 20.92 \\ \hline
+\end{tabular}
+\begin{tabular}{lcccc}
+\multicolumn{5}{c}{windsorize at 9999999999} \\ \hline
+ & (1) & (2) & (3) & (4) \\
+VARIABLES &  &  &  &  \\ \hline
+ &  &  &  &  \\
+CerMain & 1.126*** & 0.725** & 0.940** & 0.628 \\
+ & (0.000) & (0.034) & (0.026) & (0.124) \\
+std\_max\_new &  &  & -0.041 &  \\
+ &  &  & (0.447) &  \\
+Dep. Agri. &  &  &  & 0.409 \\
+ &  &  &  & (0.273) \\
+L\_hier1 & . & . & . & . \\
+ & (.) & (.) & (.) & (.) \\
+dummy\_continental3==Africa &  & 0.353 & 0.231 & 0.368 \\
+ &  & (0.165) & (0.431) & (0.159) \\
+dummy\_continental3==Asia &  & 0.512* & 0.354 & 0.545* \\
+ &  & (0.099) & (0.331) & (0.098) \\
+dummy\_continental3==Europe &  & 1.533*** & 1.364*** & 1.592*** \\
+ &  & (0.000) & (0.001) & (0.000) \\
+dummy\_continental3==N America &  & -0.174 & -0.265 & -0.031 \\
+ &  & (0.291) & (0.178) & (0.908) \\
+dummy\_continental3==S America &  & -0.178 & -0.182 & -0.143 \\
+ &  & (0.191) & (0.188) & (0.338) \\
+ &  &  &  &  \\
+Observations & 952 & 952 & 952 & 952 \\
+R-squared & 0.784 & 0.817 & 0.809 & 0.822 \\
+ Cragg-Donald Wald F & 94.10 & 49.37 & 33.14 & 34.70 \\ \hline
+\end{tabular}
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Winsorize at percentile 2}
+\begin{tabular}{l*{5}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+\hline
+CerMain         &    1.149         &    0.816         &    0.996         &    0.738         &    0.746         \\
+                &  (0.001)\sym{***}&  (0.063)\sym{*}  &  (0.063)\sym{*}  &  (0.168)         &  (0.049)\sym{**} \\
+LandProd        &                  &                  &   -0.034         &                  &    0.009         \\
+                &                  &                  &  (0.640)         &                  &  (0.873)         \\
+Dep. agriculture&                  &                  &                  &    0.327         &                  \\
+                &                  &                  &                  &  (0.523)         &                  \\
+\hline
+Observations    &      952         &      952         &      952         &      952         &      877         \\
+F               &    61.73         &    31.93         &    13.72         &    20.74         &    15.22         \\
+Continent FE    &       NO         &      YES         &      YES         &      YES         &      ...         \\
+Estimation      &     2SLS         &     2SLS         &     2SLS         &     2SLS         & 2SLS PDS         \\
+\hline\hline
+\end{tabular}
+\end{table}
+\begin{tabular}{lcccc}
+\multicolumn{5}{c}{windsorize at 2} \\ \hline
+ & (1) & (2) & (3) & (4) \\
+VARIABLES &  &  &  &  \\ \hline
+ &  &  &  &  \\
+CerMain & 1.149*** & 0.816* & 0.996* & 0.738 \\
+ & (0.001) & (0.051) & (0.056) & (0.144) \\
+std\_max\_new &  &  & -0.034 &  \\
+ &  &  & (0.564) &  \\
+Dep. Agri. &  &  &  & 0.327 \\
+ &  &  &  & (0.482) \\
+L\_hier1 & . & . & . & . \\
+ & (.) & (.) & (.) & (.) \\
+dummy\_continental3==Africa &  & 0.289 & 0.185 & 0.301 \\
+ &  & (0.357) & (0.614) & (0.347) \\
+dummy\_continental3==Asia &  & 0.439 & 0.306 & 0.465 \\
+ &  & (0.240) & (0.494) & (0.240) \\
+dummy\_continental3==Europe &  & 1.465*** & 1.324*** & 1.513*** \\
+ &  & (0.001) & (0.007) & (0.001) \\
+dummy\_continental3==N America &  & -0.202 & -0.276 & -0.087 \\
+ &  & (0.338) & (0.252) & (0.797) \\
+dummy\_continental3==S America &  & -0.189 & -0.192 & -0.160 \\
+ &  & (0.243) & (0.241) & (0.367) \\
+ &  &  &  &  \\
+Observations & 952 & 952 & 952 & 952 \\
+R-squared & 0.783 & 0.814 & 0.806 & 0.818 \\
+ Cragg-Donald Wald F & 59.72 & 34.41 & 20.95 & 22.60 \\ \hline
+\end{tabular}
+\begin{tabular}{lcccc}
+\multicolumn{5}{c}{windsorize at 2} \\ \hline
+ & (1) & (2) & (3) & (4) \\
+VARIABLES &  &  &  &  \\ \hline
+ &  &  &  &  \\
+CerMain & 1.149*** & 0.816** & 0.996** & 0.738* \\
+ & (0.000) & (0.020) & (0.026) & (0.082) \\
+std\_max\_new &  &  & -0.034 &  \\
+ &  &  & (0.546) &  \\
+Dep. Agri. &  &  &  & 0.327 \\
+ &  &  &  & (0.401) \\
+L\_hier1 & . & . & . & . \\
+ & (.) & (.) & (.) & (.) \\
+dummy\_continental3==Africa &  & 0.289 & 0.185 & 0.301 \\
+ &  & (0.270) & (0.549) & (0.264) \\
+dummy\_continental3==Asia &  & 0.439 & 0.306 & 0.465 \\
+ &  & (0.167) & (0.422) & (0.168) \\
+dummy\_continental3==Europe &  & 1.465*** & 1.324*** & 1.513*** \\
+ &  & (0.000) & (0.002) & (0.000) \\
+dummy\_continental3==N America &  & -0.202 & -0.276 & -0.087 \\
+ &  & (0.230) & (0.173) & (0.752) \\
+dummy\_continental3==S America &  & -0.189 & -0.192 & -0.160 \\
+ &  & (0.168) & (0.167) & (0.285) \\
+ &  &  &  &  \\
+Observations & 952 & 952 & 952 & 952 \\
+R-squared & 0.783 & 0.814 & 0.806 & 0.818 \\
+ Cragg-Donald Wald F & 88.51 & 52.53 & 30.76 & 37.03 \\ \hline
+\end{tabular}
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Winsorize at percentile 3}
+\begin{tabular}{l*{5}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+\hline
+CerMain         &    1.135         &    0.775         &    0.967         &    0.690         &    0.730         \\
+                &  (0.001)\sym{***}&  (0.075)\sym{*}  &  (0.064)\sym{*}  &  (0.190)         &  (0.052)\sym{*}  \\
+LandProd        &                  &                  &   -0.036         &                  &    0.004         \\
+                &                  &                  &  (0.614)         &                  &  (0.942)         \\
+Dep. agriculture&                  &                  &                  &    0.363         &                  \\
+                &                  &                  &                  &  (0.468)         &                  \\
+\hline
+Observations    &      952         &      952         &      952         &      952         &      877         \\
+F               &    64.90         &    31.68         &    14.13         &    20.81         &    15.02         \\
+Continent FE    &       NO         &      YES         &      YES         &      YES         &      ...         \\
+Estimation      &     2SLS         &     2SLS         &     2SLS         &     2SLS         & 2SLS PDS         \\
+\hline\hline
+\end{tabular}
+\end{table}
+\begin{tabular}{lcccc}
+\multicolumn{5}{c}{windsorize at 3} \\ \hline
+ & (1) & (2) & (3) & (4) \\
+VARIABLES &  &  &  &  \\ \hline
+ &  &  &  &  \\
+CerMain & 1.135*** & 0.775* & 0.967* & 0.690 \\
+ & (0.001) & (0.061) & (0.058) & (0.164) \\
+std\_max\_new &  &  & -0.036 &  \\
+ &  &  & (0.529) &  \\
+Dep. Agri. &  &  &  & 0.363 \\
+ &  &  &  & (0.426) \\
+L\_hier1 & . & . & . & . \\
+ & (.) & (.) & (.) & (.) \\
+dummy\_continental3==Africa &  & 0.317 & 0.208 & 0.330 \\
+ &  & (0.306) & (0.563) & (0.294) \\
+dummy\_continental3==Asia &  & 0.471 & 0.330 & 0.500 \\
+ &  & (0.203) & (0.453) & (0.201) \\
+dummy\_continental3==Europe &  & 1.495*** & 1.345*** & 1.547*** \\
+ &  & (0.001) & (0.006) & (0.001) \\
+dummy\_continental3==N America &  & -0.189 & -0.270 & -0.062 \\
+ &  & (0.365) & (0.258) & (0.851) \\
+dummy\_continental3==S America &  & -0.184 & -0.187 & -0.153 \\
+ &  & (0.254) & (0.252) & (0.390) \\
+ &  &  &  &  \\
+Observations & 952 & 952 & 952 & 952 \\
+R-squared & 0.783 & 0.816 & 0.808 & 0.820 \\
+ Cragg-Donald Wald F & 62.92 & 34.03 & 21.69 & 22.38 \\ \hline
+\end{tabular}
+\begin{tabular}{lcccc}
+\multicolumn{5}{c}{windsorize at 3} \\ \hline
+ & (1) & (2) & (3) & (4) \\
+VARIABLES &  &  &  &  \\ \hline
+ &  &  &  &  \\
+CerMain & 1.135*** & 0.775** & 0.967** & 0.690* \\
+ & (0.000) & (0.026) & (0.027) & (0.099) \\
+std\_max\_new &  &  & -0.036 &  \\
+ &  &  & (0.510) &  \\
+Dep. Agri. &  &  &  & 0.363 \\
+ &  &  &  & (0.343) \\
+L\_hier1 & . & . & . & . \\
+ & (.) & (.) & (.) & (.) \\
+dummy\_continental3==Africa &  & 0.317 & 0.208 & 0.330 \\
+ &  & (0.221) & (0.494) & (0.215) \\
+dummy\_continental3==Asia &  & 0.471 & 0.330 & 0.500 \\
+ &  & (0.135) & (0.379) & (0.135) \\
+dummy\_continental3==Europe &  & 1.495*** & 1.345*** & 1.547*** \\
+ &  & (0.000) & (0.002) & (0.000) \\
+dummy\_continental3==N America &  & -0.189 & -0.270 & -0.062 \\
+ &  & (0.256) & (0.179) & (0.818) \\
+dummy\_continental3==S America &  & -0.184 & -0.187 & -0.153 \\
+ &  & (0.178) & (0.177) & (0.308) \\
+ &  &  &  &  \\
+Observations & 952 & 952 & 952 & 952 \\
+R-squared & 0.783 & 0.816 & 0.808 & 0.820 \\
+ Cragg-Donald Wald F & 92.43 & 52.10 & 31.70 & 36.72 \\ \hline
+\end{tabular}
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Winsorize at percentile 5}
+\begin{tabular}{l*{5}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+\hline
+CerMain         &    1.111         &    0.717         &    0.922         &    0.620         &    0.690         \\
+                &  (0.002)\sym{***}&  (0.099)\sym{*}  &  (0.069)\sym{*}  &  (0.234)         &  (0.062)\sym{*}  \\
+LandProd        &                  &                  &   -0.039         &                  &   -0.003         \\
+                &                  &                  &  (0.588)         &                  &  (0.963)         \\
+Dep. agriculture&                  &                  &                  &    0.415         &                  \\
+                &                  &                  &                  &  (0.394)         &                  \\
+\hline
+Observations    &      952         &      952         &      952         &      952         &      877         \\
+F               &    67.42         &    31.39         &    14.51         &    20.76         &    17.17         \\
+Continent FE    &       NO         &      YES         &      YES         &      YES         &      ...         \\
+Estimation      &     2SLS         &     2SLS         &     2SLS         &     2SLS         & 2SLS PDS         \\
+\hline\hline
+\end{tabular}
+\end{table}
+\begin{tabular}{lcccc}
+\multicolumn{5}{c}{windsorize at 5} \\ \hline
+ & (1) & (2) & (3) & (4) \\
+VARIABLES &  &  &  &  \\ \hline
+ &  &  &  &  \\
+CerMain & 1.111*** & 0.717* & 0.922* & 0.620 \\
+ & (0.002) & (0.079) & (0.064) & (0.202) \\
+std\_max\_new &  &  & -0.039 &  \\
+ &  &  & (0.492) &  \\
+Dep. Agri. &  &  &  & 0.415 \\
+ &  &  &  & (0.352) \\
+L\_hier1 & . & . & . & . \\
+ & (.) & (.) & (.) & (.) \\
+dummy\_continental3==Africa &  & 0.358 & 0.242 & 0.373 \\
+ &  & (0.241) & (0.490) & (0.229) \\
+dummy\_continental3==Asia &  & 0.518 & 0.368 & 0.551 \\
+ &  & (0.158) & (0.393) & (0.154) \\
+dummy\_continental3==Europe &  & 1.539*** & 1.378*** & 1.598*** \\
+ &  & (0.000) & (0.004) & (0.001) \\
+dummy\_continental3==N America &  & -0.171 & -0.258 & -0.027 \\
+ &  & (0.407) & (0.272) & (0.934) \\
+dummy\_continental3==S America &  & -0.177 & -0.181 & -0.142 \\
+ &  & (0.270) & (0.267) & (0.425) \\
+ &  &  &  &  \\
+Observations & 952 & 952 & 952 & 952 \\
+R-squared & 0.784 & 0.818 & 0.810 & 0.822 \\
+ Cragg-Donald Wald F & 65.38 & 33.39 & 22.30 & 22.01 \\ \hline
+\end{tabular}
+\begin{tabular}{lcccc}
+\multicolumn{5}{c}{windsorize at 5} \\ \hline
+ & (1) & (2) & (3) & (4) \\
+VARIABLES &  &  &  &  \\ \hline
+ &  &  &  &  \\
+CerMain & 1.111*** & 0.717** & 0.922** & 0.620 \\
+ & (0.000) & (0.038) & (0.032) & (0.133) \\
+std\_max\_new &  &  & -0.039 &  \\
+ &  &  & (0.472) &  \\
+Dep. Agri. &  &  &  & 0.415 \\
+ &  &  &  & (0.269) \\
+L\_hier1 & . & . & . & . \\
+ & (.) & (.) & (.) & (.) \\
+dummy\_continental3==Africa &  & 0.358 & 0.242 & 0.373 \\
+ &  & (0.163) & (0.416) & (0.157) \\
+dummy\_continental3==Asia &  & 0.518* & 0.368 & 0.551* \\
+ &  & (0.098) & (0.319) & (0.097) \\
+dummy\_continental3==Europe &  & 1.539*** & 1.378*** & 1.598*** \\
+ &  & (0.000) & (0.001) & (0.000) \\
+dummy\_continental3==N America &  & -0.171 & -0.258 & -0.027 \\
+ &  & (0.299) & (0.193) & (0.920) \\
+dummy\_continental3==S America &  & -0.177 & -0.181 & -0.142 \\
+ &  & (0.193) & (0.191) & (0.344) \\
+ &  &  &  &  \\
+Observations & 952 & 952 & 952 & 952 \\
+R-squared & 0.784 & 0.818 & 0.810 & 0.822 \\
+ Cragg-Donald Wald F & 95.21 & 51.33 & 32.57 & 36.26 \\ \hline
+\end{tabular}

@@ -1,0 +1,21 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Winsorize at percentile 5}
+\begin{tabular}{l*{5}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+\hline
+CerMain         &    1.108         &    0.709         &    0.909         &    0.606         &    0.667         \\
+                &  (0.002)\sym{***}&  (0.102)         &  (0.073)\sym{*}  &  (0.248)         &  (0.072)\sym{*}  \\
+LandProd        &                  &                  &   -0.038         &                  &   -0.002         \\
+                &                  &                  &  (0.604)         &                  &  (0.972)         \\
+Dep. agriculture&                  &                  &                  &    0.425         &                  \\
+                &                  &                  &                  &  (0.383)         &                  \\
+\hline
+Observations    &      952         &      952         &      952         &      952         &      877         \\
+F               &    65.93         &    31.28         &    14.10         &    20.33         &    14.23         \\
+Continent FE    &       NO         &      YES         &      YES         &      YES         &      ...         \\
+Estimation      &     2SLS         &     2SLS         &     2SLS         &     2SLS         & 2SLS PDS         \\
+\hline\hline
+\end{tabular}
+\end{table}
